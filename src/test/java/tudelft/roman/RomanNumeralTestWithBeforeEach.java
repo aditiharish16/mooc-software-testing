@@ -15,18 +15,21 @@ public class RomanNumeralTestWithBeforeEach {
 
     @Test
     public void singleNumber() {
+        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("I");
         Assertions.assertEquals(1, result);
     }
 
     @Test
     public void numberWithManyDigits() {
+        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("VIII");
         Assertions.assertEquals(8, result);
     }
 
     @Test
     public void numberWithSubtractiveNotation() {
+        RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("IV");
         Assertions.assertEquals(4, result);
     }
@@ -35,5 +38,10 @@ public class RomanNumeralTestWithBeforeEach {
     public void numberWithAndWithoutSubtractiveNotation() {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
+    }
+    @Test
+    public void numberWithAddNotation() {
+        int result = roman.convert("XI");
+        Assertions.assertEquals(11, result);
     }
 }
